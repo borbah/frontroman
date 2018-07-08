@@ -1,7 +1,8 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Home from './views/Home.vue';
-import About from './views/About.vue';
+import HomeView from './views/HomeView/HomeView.vue';
+import Edit from './components/Edit/Edit.vue';
+import Create from './components/Create/Create.vue';
 
 Vue.use(Router);
 
@@ -9,13 +10,18 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: Home,
+      name: 'HomeView',
+      component: HomeView,
     },
     {
-      path: '/about',
-      name: 'about',
-      component: About,
+      path: '/edit/:id',
+      name: 'Edit',
+      component: Edit,
+    },
+    {
+      path: '/create',
+      name: 'Create',
+      component: Create,
     },
   ],
 });
